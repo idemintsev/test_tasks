@@ -45,7 +45,7 @@ class BotNewsSender:
     @staticmethod
     def _get_data_text(page_content: str) -> str:
         full_text = []
-        title, lid, text = str(), str(), str()
+        title, lead, text = str(), str(), str()
         soup = BeautifulSoup(page_content, 'html.parser')
         for data in soup.find_all(name='h1', attrs={'class': 'main-article__title'}):
             title = f'{data.get_text()}'.strip('\n').split(' ')
